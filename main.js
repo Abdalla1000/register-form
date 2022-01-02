@@ -9,7 +9,7 @@ let phone = document.querySelector("#phone");
 
 //span for some error messages
 let help =document.querySelector(".helper");
-//span for common Errors1111111111111
+//span for common Errors
 let commonErrors =document.querySelector("#commonErrors");
 //form 
 let form = document.querySelector("#signUpForm");
