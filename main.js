@@ -1,4 +1,5 @@
 //all feilds 
+
 let firstName = document.querySelector("#firstName");
 let lastName = document.querySelector("#lastName");
 let password = document.querySelector("#password");
@@ -22,11 +23,14 @@ form.addEventListener("submit", event =>{
     if(!checkPasswordLength()){
     return;
  }
+    if(!checkConfirmPassword()){
+    return;
+ }
     
 // if all is okay 
-commonErrors.textContent = "Succesfully Regsitered Thank You !";
-commonErrors.style.background ="#74d3b3";
+commonErrors.textContent = alert("Succesfully Regsitered Thank You !");
 commonErrors.style.color= "#fff";
+
 // reset all feilds of the form
 form.reset();
     }else{
@@ -49,25 +53,24 @@ function checkPasswordLength(){
     }else{
     password.style.border= '1px solid rgba(0,0,0,.125)';
     commonErrors.style.color="#000";
-    commonErrors.textContent='';
-    returntrue;
+    return true;
     }
 
     }
 
-    function checkConfirmPassword(){
-        if(confirmPassword.value != password.value){
-           commonErrors.textContent = "Password Must be Same";
-           confirmPassword.style.border= '1px solid red';
-           commonErrors.style.color = "red";
+function checkConfirmPassword(){
+    if(confirmPassword.value != password.value){
+        commonErrors.textContent= "Password Must be Same";
+        confirmPassword.style.border = '1px solid red';
+        commonErrors.style.color = "red";
         return false;
-        }else{
-        confirmPassword.style.border='1px solid rgba(0,0,0,.125)';
-        //commonErrors.style.color = "#000";
-        commonErrors.textContent='';
+    }else{
+        confirmPassword.style.border = '1px solid rgba(0,0,0,.125)';
+        commonErrors.style.colo = "#000";
         return true;
+            }
         }
-        }
+        
 // checkFeildsEmpty fucntion to check if there any Empty Feilds
 function checkFeildsEmpty(feild) {
     if (feild.value === '' || feild.value == null){
