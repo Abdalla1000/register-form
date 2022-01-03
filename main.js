@@ -7,9 +7,10 @@ let confirmPassword = document.querySelector("#confirmPasword");
 let email =document.querySelector("#email");
 let phone = document.querySelector("#phone");
 
+
 //span for some error messages
 let help =document.querySelector(".helper");
-//span for common Errors
+//span for common Errors1111111111111
 let commonErrors =document.querySelector("#commonErrors");
 //form 
 let form = document.querySelector("#signUpForm");
@@ -26,9 +27,15 @@ form.addEventListener("submit", event =>{
     if(!checkConfirmPassword()){
     return;
  }
+ 
     
 // if all is okay 
-commonErrors.textContent = alert("Succesfully Regsitered Thank You !");
+commonErrors.textContent = alert("Succesfully Regsitered Thank You !" +  
+"\n"+"your name:"+ "  "+firstName.value 
++"\n"+"your last name:"+ "  "+lastName.value+
+"\n"+"your emal:"+ "  "+email.value+
+"\n"+"your phone:"+ "  "+phone.value);
+
 commonErrors.style.color= "#fff";
 
 // reset all feilds of the form
@@ -41,6 +48,7 @@ form.reset();
      checkFeildsEmpty(confirmPassword);
      checkFeildsEmpty(email);
      checkFeildsEmpty(phone);
+      
 }
     });
     //function checking for Password Length
@@ -80,6 +88,9 @@ function checkFeildsEmpty(feild) {
     return false;
     }else{
     feild.style.border = '1pxsolid rgba(0,0,0,.125)';
+    
     return true;
+    
     }
+    
     }
